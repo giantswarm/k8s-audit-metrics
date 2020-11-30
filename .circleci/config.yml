@@ -1,0 +1,39 @@
+orbs:
+  architect: giantswarm/architect@0.18.0
+
+version: 2.1
+workflows:
+  build:
+    jobs:
+      # build operator
+      - architect/go-build:
+          name: go-build
+          binary: k8s-audit-metrics
+          resource_class: large
+          filters:
+            tags:
+              only: /^v.*/
+
+      # build and push docker image to quay
+      - architect/push-to-docker:
+          name: push-k8s-audit-metrics-to-quay
+          image: "quay.io/giantswarm/k8s-audit-metrics"
+          username_envar: "QUAY_USERNAME"
+          password_envar: "QUAY_PASSWORD"
+          requires:
+            - go-build
+          filters:
+            # Trigger the job also on git tag.
+            tags:
+              only: /^v.*/
+
+      # build and push helm chart to app catalog
+      - architect/push-to-app-catalog:
+          name: "package and push chart to app catalog"
+          app_catalog: "giantswarm-playground-catalog"
+          app_catalog_test: "giantswarm-playground-test-catalog"
+          chart: "k8s-audit-metrics-app"
+          # Trigger job on git tag.
+          filters:
+            tags:
+              only: /^v.*/
