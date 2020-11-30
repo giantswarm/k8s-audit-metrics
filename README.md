@@ -1,0 +1,38 @@
+[![Build Status](https://api.travis-ci.org/giantswarm/example-opensource-repo.svg)](https://travis-ci.org/giantswarm/example-opensource-repo) [![Go Report Card](https://goreportcard.com/badge/github.com/giantswarm/example-opensource-repo)](https://goreportcard.com/report/github.com/giantswarm/example-opensource-repo) [![](https://godoc.org/github.com/giantswarm/example-opensource-repo?status.svg)](http://godoc.org/github.com/giantswarm/example-opensource-repo) [![](https://img.shields.io/docker/pulls/giantswarm/example-opensource-repo.svg)](http://hub.docker.com/giantswarm/example-opensource-repo)
+
+# k8s-audit-metrics
+
+K8s-audit-metrics is a service that processes Kubernetes apiserver's audit logs and exposes metrics from it.
+
+## Prerequisites
+
+## Getting Project
+
+Download the latest release: https://github.com/giantswarm/k8s-audit-metrics/releases/latest
+
+Clone the git repository: https://github.com/giantswarm/k8s-audit-metrics.git
+
+Download the latest docker image from here: https://hub.docker.com/r/giantswarm/k8s-audit-metrics/
+
+### How to build
+
+#### Building the standard way
+
+```nohighlight
+go build
+```
+
+## Contact
+
+- Mailing list: [giantswarm](https://groups.google.com/forum/!forum/giantswarm)
+- Bugs: [issues](https://github.com/giantswarm/k8s-audit-metrics/issues)
+
+## Contributing & Reporting Bugs
+
+See [CONTRIBUTING.md](/giantswarm/k8s-audit-metrics/blob/master/CONTRIBUTING.md) for details on submitting patches, the contribution workflow as well as reporting bugs.
+
+For security issues, please see [the security policy](SECURITY.md).
+
+## License
+
+PROJECT is under the Apache 2.0 license. See the [LICENSE](/giantswarm/k8s-audit-metrics/blob/master/LICENSE) file for details.
