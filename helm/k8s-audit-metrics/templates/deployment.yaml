@@ -27,12 +27,6 @@ spec:
           items:
           - key: config.yaml
             path: config.yaml
-      - name: {{ tpl .Values.resource.default.name  . }}-secret
-        secret:
-          secretName: {{ tpl .Values.resource.default.name  . }}
-          items:
-          - key: secret.yaml
-            path: secret.yaml
       - name: certs
         hostPath:
           path: /etc/ssl/certs/ca-certificates.crt
@@ -46,9 +40,6 @@ spec:
         volumeMounts:
         - name: {{ tpl .Values.resource.default.name  . }}-configmap
           mountPath: /var/run/{{ .Chart.Name }}/configmap/
-        - name: {{ tpl .Values.resource.default.name  . }}-secret
-          mountPath: /var/run/{{ .Chart.Name }}/secret/
-          readOnly: true
         - name: certs
           mountPath: /etc/ssl/certs/ca-certificates.crt
           readOnly: true
