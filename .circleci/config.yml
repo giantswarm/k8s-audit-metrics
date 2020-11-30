@@ -17,6 +17,7 @@ workflows:
       # build and push docker image to quay
       - architect/push-to-docker:
           name: push-k8s-audit-metrics-to-quay
+          context: "architect"
           image: "quay.io/giantswarm/k8s-audit-metrics"
           username_envar: "QUAY_USERNAME"
           password_envar: "QUAY_PASSWORD"
@@ -30,6 +31,7 @@ workflows:
       # build and push helm chart to app catalog
       - architect/push-to-app-catalog:
           name: "package and push chart to app catalog"
+          context: "architect"
           app_catalog: "giantswarm-playground-catalog"
           app_catalog_test: "giantswarm-playground-test-catalog"
           chart: "k8s-audit-metrics-app"
