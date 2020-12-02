@@ -9,4 +9,4 @@ require (
 
 // We don't use websocket but it's indirect dependency that fixes a CVE so put
 // the definition here in order to silence nancy.
-replace github.com/gorilla/websocket v1.4.0 => github.com/gorilla/websocket v1.4.2
+replace github.com/gorilla/websocket => github.com/gorilla/websocket v1.4.2
