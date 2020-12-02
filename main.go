@@ -5,9 +5,10 @@ import (
 	"log"
 	"os"
 
-	"github.com/giantswarm/k8s-audit-metrics/tail"
 	"github.com/giantswarm/microerror"
 	"github.com/giantswarm/micrologger"
+
+	"github.com/giantswarm/k8s-audit-metrics/tail"
 )
 
 func main() {
