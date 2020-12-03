@@ -20,6 +20,13 @@ func File(name string, logger micrologger.Logger) (<-chan string, error) {
 		return nil, microerror.Mask(err)
 	}
 
+	// Seek to the end of the file to not repeat earlier lines.
+	_, err = f.Seek(0, 2)
+	if err != nil {
+		return nil, microerror.Mask(err)
+	}
+
+	// Capture file inode number to detect log rotation.
 	inodeBeginning, err := getInode(name)
 	if err != nil {
 		logger.Errorf(ctx, err, "stat")
@@ -28,13 +35,16 @@ func File(name string, logger micrologger.Logger) (<-chan string, error) {
 
 	reader := newLineReader(f)
 
-	err = reader.readLines(output)
-	if err != nil {
-		logger.Errorf(ctx, err, "read")
-		return nil, microerror.Mask(err)
-	}
-
 	go func() {
+		defer f.Close()
+		defer close(output)
+
+		err = reader.readLines(output)
+		if err != nil {
+			logger.Errorf(ctx, err, "read")
+			return
+		}
+
 		for {
 			inode, err := getInode(name)
 			if err != nil {
@@ -54,11 +64,8 @@ func File(name string, logger micrologger.Logger) (<-chan string, error) {
 				break
 			}
 
-			time.Sleep(100 * time.Millisecond)
+			time.Sleep(10 * time.Millisecond)
 		}
-
-		f.Close()
-		close(output)
 	}()
 
 	return output, nil
