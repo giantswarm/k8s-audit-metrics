@@ -10,6 +10,9 @@ require (
 	k8s.io/apiserver v0.18.9
 )
 
-// We don't use websocket but it's indirect dependency that fixes a CVE so put
-// the definition here in order to silence nancy.
-replace github.com/gorilla/websocket => github.com/gorilla/websocket v1.4.2
+// We don't use etcd nor websocket but those are indirect dependencies that has
+// a CVEs so put the restrictions here in order to silence nancy.
+replace (
+	github.com/coreos/etcd/v3 => github.com/coreos/etcd/v3 v3.4.14
+	github.com/gorilla/websocket => github.com/gorilla/websocket v1.4.2
+)
