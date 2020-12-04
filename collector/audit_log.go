@@ -6,7 +6,7 @@ import (
 	"k8s.io/apiserver/pkg/apis/audit"
 )
 
-const Namespace = "audit_log"
+const Namespace = "k8s_api_audit"
 
 type AuditLogCollector struct {
 	logger micrologger.Logger
