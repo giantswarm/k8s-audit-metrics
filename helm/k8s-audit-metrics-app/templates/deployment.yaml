@@ -20,6 +20,13 @@ spec:
       labels:
         {{- include "k8s-audit-metrics.selectorLabels" . | nindent 8 }}
     spec:
+      tolerations:
+      # Tolerate master taint
+      - key: node-role.kubernetes.io/master
+        operator: Exists
+        effect: NoSchedule
+      nodeSelector:
+        kubernetes.io/role: master
       volumes:
       - name: {{ tpl .Values.resource.default.name  . }}-configmap
         configMap:
