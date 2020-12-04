@@ -11,13 +11,13 @@ const Namespace = "k8s_api_audit"
 type AuditLogCollector struct {
 	logger micrologger.Logger
 
-	requests *prometheus.HistogramVec
+	requests *prometheus.CounterVec
 }
 
 func New(logger micrologger.Logger) *AuditLogCollector {
-	requestsOpts := prometheus.HistogramOpts{
+	requestsOpts := prometheus.CounterOpts{
 		Namespace: Namespace,
-		Name:      "requests",
+		Name:      "requests_total",
 		Help:      "apiserver requests processed from audit log",
 	}
 
@@ -26,7 +26,7 @@ func New(logger micrologger.Logger) *AuditLogCollector {
 	return &AuditLogCollector{
 		logger: logger,
 
-		requests: prometheus.NewHistogramVec(requestsOpts, labelNames),
+		requests: prometheus.NewCounterVec(requestsOpts, labelNames),
 	}
 }
 
@@ -44,5 +44,5 @@ func (c *AuditLogCollector) Process(event audit.Event) {
 		"user_agent": event.UserAgent,
 	}
 
-	c.requests.With(labels).Observe(event.StageTimestamp.Time.Sub(event.RequestReceivedTimestamp.Time).Seconds())
+	c.requests.With(labels).Inc()
 }
