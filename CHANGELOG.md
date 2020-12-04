@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- Change `Service` type to default.
+- Label `Service` with `giantswarm.io/monitoring` to enable scraping.
+
 ## [0.0.3] - 2020-12-04
 
 ### Changed
