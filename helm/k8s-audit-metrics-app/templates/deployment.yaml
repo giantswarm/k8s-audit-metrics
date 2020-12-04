@@ -30,6 +30,9 @@ spec:
       - name: certs
         hostPath:
           path: /etc/ssl/certs/ca-certificates.crt
+      - name: varlog
+        hostPath:
+          path: /var/log
       serviceAccountName: {{ tpl .Values.resource.default.name  . }}
       securityContext:
         runAsUser: {{ .Values.pod.user.id }}
@@ -38,6 +41,9 @@ spec:
       - name: {{ .Chart.Name }}
         image: "{{ .Values.Installation.V1.Registry.Domain }}/{{ .Values.image.name }}:{{ .Values.image.tag }}"
         volumeMounts:
+        - name: varlog
+          mountPath: /var/log
+          readOnly: true
         - name: {{ tpl .Values.resource.default.name  . }}-configmap
           mountPath: /var/run/{{ .Chart.Name }}/configmap/
         - name: certs
@@ -47,7 +53,7 @@ spec:
         - name: http
           containerPort: 8000
         args:
-        - daemon
+        - /var/log/apiserver/audit.log
         livenessProbe:
           httpGet:
             path: /healthz
