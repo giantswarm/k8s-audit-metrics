@@ -5,10 +5,10 @@ metadata:
   namespace: {{ tpl .Values.resource.default.namespace  . }}
   labels:
     {{- include "k8s-audit-metrics.labels" . | nindent 4 }}
+    giantswarm.io/monitoring: "true"
   annotations:
     prometheus.io/scrape: "true"
 spec:
-  type: NodePort
   ports:
   - port: 8000
   selector:
