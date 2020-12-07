@@ -28,14 +28,25 @@ workflows:
             tags:
               only: /^v.*/
 
-      # build and push helm chart to app catalog
+      # build and push helm chart to app catalogs
       - architect/push-to-app-catalog:
-          name: "package and push chart to app catalog"
+          name: "package and push chart to TC app catalog"
           context: "architect"
           app_catalog: "giantswarm-playground-catalog"
           app_catalog_test: "giantswarm-playground-test-catalog"
           chart: "k8s-audit-metrics-app"
           # Trigger job on git tag.
           filters:
+            tags:
+              only: /^v.*/
+
+      - architect/push-to-app-catalog:
+          name: "package and push chart to CP app catalog"
+          context: "architect"
+          app_catalog: "control-plane-catalog"
+          app_catalog_test: "control-plane-test-catalog"
+          chart: "k8s-audit-metrics-app"
+          filters:
+            # Trigger the job also on git tag.
             tags:
               only: /^v.*/
