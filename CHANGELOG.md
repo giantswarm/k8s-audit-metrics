@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Added missing annotations to get service picked up from tenant cluster by prometheus.
+
 ## [0.0.5] - 2020-12-07
 
 ### Changed
