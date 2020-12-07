@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Push app to CP app catalog as well.
+
 ## [0.0.4] - 2020-12-04
 
 - Change `Service` type to default.
