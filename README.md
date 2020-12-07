@@ -12,7 +12,7 @@ In order to have nicer labels and easier way to distinct different clients, it's
 
 [Client-go rest.Config](https://pkg.go.dev/k8s.io/client-go/rest#Config) has a field `UserAgent` that is useful to set to `<component>/<version>`.
 
-Example (from [azure-operator)(https://github.com/giantswarm/azure-operator/pull/1221/files)]):
+Example (from [azure-operator](https://github.com/giantswarm/azure-operator/pull/1221/files)):
 ```
 restConfig.UserAgent = fmt.Sprintf("%s/%s", project.Name(), project.Version())
 ```
