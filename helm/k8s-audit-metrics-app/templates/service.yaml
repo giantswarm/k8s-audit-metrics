@@ -8,7 +8,7 @@ metadata:
     giantswarm.io/monitoring: "true"
   annotations:
     giantswarm.io/monitoring-path: "/metrics"
-    giantswarm.io/monigoring-port: 8000
+    giantswarm.io/monitoring-port: 8000
     giantswarm.io/monitoring: "true"
     prometheus.io/scrape: "true"
 spec:
