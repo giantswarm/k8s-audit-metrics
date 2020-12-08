@@ -5,7 +5,7 @@ go 1.15
 require (
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/giantswarm/exporterkit v0.2.0
-	github.com/giantswarm/microerror v0.2.1
+	github.com/giantswarm/microerror v0.3.0
 	github.com/giantswarm/micrologger v0.4.0
 	github.com/kr/text v0.2.0 // indirect
 	github.com/mitchellh/mapstructure v1.3.3 // indirect
