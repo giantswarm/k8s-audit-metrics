@@ -4,6 +4,28 @@
 
 K8s-audit-metrics is a service that processes Kubernetes apiserver's audit logs and exposes metrics from it.
 
+### Tips & tricks
+
+#### Kubernetes client user-agent
+
+In order to have nicer labels and easier way to distinct different clients, it's good to configure appropriate user-agent header to your k8s client.
+
+[Client-go rest.Config](https://pkg.go.dev/k8s.io/client-go/rest#Config) has a field `UserAgent` that is useful to set to `<component>/<version>`.
+
+Example (from [azure-operator](https://github.com/giantswarm/azure-operator/pull/1221/files)):
+```
+restConfig.UserAgent = fmt.Sprintf("%s/%s", project.Name(), project.Version())
+```
+
+
+#### Prometheus query to get req/min per component
+
+Grouping metrics by user-agent and computing rate of requests gives a metric for req/min e.g. as follows:
+```
+sum by (user_agent) (rate(k8s_api_audit_requests_total[5m])*60)
+```
+
+
 ## Prerequisites
 
 ## Getting Project
