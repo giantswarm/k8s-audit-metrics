@@ -6,7 +6,7 @@ require (
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/giantswarm/exporterkit v0.2.0
 	github.com/giantswarm/microerror v0.3.0
-	github.com/giantswarm/micrologger v0.4.0
+	github.com/giantswarm/micrologger v0.5.0
 	github.com/kr/text v0.2.0 // indirect
 	github.com/mitchellh/mapstructure v1.3.3 // indirect
 	github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e // indirect
