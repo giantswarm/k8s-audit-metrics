@@ -19,7 +19,7 @@ require (
 	google.golang.org/protobuf v1.25.0 // indirect
 	gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f // indirect
 	gopkg.in/ini.v1 v1.60.1 // indirect
-	k8s.io/apiserver v0.18.9
+	k8s.io/apiserver v0.18.18
 )
 
 // We don't use etcd nor websocket but those are indirect dependencies that has
