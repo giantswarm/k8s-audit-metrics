@@ -22,7 +22,7 @@ restConfig.UserAgent = fmt.Sprintf("%s/%s", project.Name(), project.Version())
 
 ##### authorization failures
 
-Each entry in the audit log has information about authorization status and we expose that information in the metrics - `authorization_decision` tells you whether or not a request was authorized and `authorization_decision_reason` tells you why. The following query gives you the count of all requests that got denied:
+Each entry in the audit log has information about authorization status and we expose that information in the metrics - `authorization_decision` tells you whether or not a request was authorized and `authorization_decision_reason` tells you why. The following query gives you the count of all requests that got forbidden:
 ```
 count({authorization_decision="forbid"})
 ```

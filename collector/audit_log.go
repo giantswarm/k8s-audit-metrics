@@ -33,8 +33,8 @@ func New(logger micrologger.Logger) *AuditLogCollector {
 	return &AuditLogCollector{
 		logger: logger,
 
-		requestsDuration: newRequestDurationMetric(),
 		requestsCount:    newRequestCountMetric(),
+		requestsDuration: newRequestDurationMetric(),
 	}
 }
 
