@@ -18,13 +18,26 @@ restConfig.UserAgent = fmt.Sprintf("%s/%s", project.Name(), project.Version())
 ```
 
 
-#### Prometheus query to get req/min per component
+#### Prometheus queries
+
+##### authorization failures
+
+Each entry in the audit log has information about authorization status and we expose that information in the metrics - `authorization_decision` tells you whether or not a request was authorized and `authorization_decision_reason` tells you why. The following query gives you the count of all requests that got forbidden:
+```
+count({authorization_decision="forbid"})
+```
+
+##### request duration
+
+`k8s_api_audit_request_duration_nanoseconds` gives you information about request duration and potential latencies.
+
+
+##### req/min per component
 
 Grouping metrics by user-agent and computing rate of requests gives a metric for req/min e.g. as follows:
 ```
 sum by (user_agent) (rate(k8s_api_audit_requests_total[5m])*60)
 ```
-
 
 ## Prerequisites
 
