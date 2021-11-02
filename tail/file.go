@@ -30,33 +30,33 @@ func File(name string, logger micrologger.Logger) (<-chan string, error) {
 func readFile(ctx context.Context, name string, output chan string, logger micrologger.Logger) error {
 	f, err := os.Open(name)
 	if err != nil {
-		return err
+		return microerror.Mask(err)
 	}
 	defer f.Close()
 
 	// Seek to the end of the file to not repeat earlier lines.
 	_, err = f.Seek(0, 2)
 	if err != nil {
-		return err
+		return microerror.Mask(err)
 	}
 
 	// Capture file inode number to detect log rotation.
 	inodeBeginning, err := getInode(name)
 	if err != nil {
-		return err
+		return microerror.Mask(err)
 	}
 
 	reader := newLineReader(f)
 
 	err = reader.readLines(output)
 	if err != nil {
-		return err
+		return microerror.Mask(err)
 	}
 
 	for {
 		inode, err := getInode(name)
 		if err != nil {
-			return err
+			return microerror.Mask(err)
 		}
 
 		if inodeBeginning != inode {
@@ -67,7 +67,7 @@ func readFile(ctx context.Context, name string, output chan string, logger micro
 
 		err = reader.readLines(output)
 		if err != nil {
-			return err
+			return microerror.Mask(err)
 		}
 
 		time.Sleep(10 * time.Millisecond)
