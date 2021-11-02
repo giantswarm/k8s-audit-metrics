@@ -61,7 +61,7 @@ func readFile(ctx context.Context, name string, output chan string, logger micro
 
 		if inodeBeginning != inode {
 			// File has been rotated. We need to restart.
-			logger.Debugf(ctx, "inode has changed (was %q, now %q)", inodeBeginning, inode)
+			logger.Debugf(ctx, "inode has changed (was %d, now %d)", inodeBeginning, inode)
 			break
 		}
 
