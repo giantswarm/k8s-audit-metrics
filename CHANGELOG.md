@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.0] - 2021-11-02
+
 - Add `k8s_api_audit_request_duration_nanoseconds` metric to expose request duration.
 - Add `authorization_decision` and `authorization_decision_reason` labels to all metrics.
 
@@ -51,7 +53,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First release.
 
 
-[Unreleased]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.0.7...HEAD
+[Unreleased]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.0.7...v0.1.0
 [0.0.7]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.0.6...v0.0.7
 [0.0.6]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.0.5...v0.0.6
 [0.0.5]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.0.4...v0.0.5
