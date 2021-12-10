@@ -12,11 +12,14 @@ const (
 	// https://github.com/kubernetes/apiserver/blob/706a6d89cf35950281e095bb1eeed5e3211d6272/pkg/endpoints/filters/authorization.go#L35-L36
 	decisionAnnotationKey = "authorization.k8s.io/decision"
 	reasonAnnotationKey   = "authorization.k8s.io/reason"
+	// https://github.com/kubernetes/enhancements/blob/master/keps/sig-auth/1205-bound-service-account-tokens/README.md
+	staleTokenAnnotationKey = "authentication.k8s.io/stale-token"
 )
 
 var metricLabels = []string{
 	"authorization_decision",
 	"authorization_decision_reason",
+	"authentication_stale_token",
 	"user",
 	"user_agent",
 }
@@ -61,6 +64,7 @@ func buildMetricLabels(event audit.Event) prometheus.Labels {
 	return prometheus.Labels{
 		"authorization_decision":        event.Annotations[decisionAnnotationKey],
 		"authorization_decision_reason": event.Annotations[reasonAnnotationKey],
+		"authentication_stale_token":    event.Annotations[staleTokenAnnotationKey],
 		"user":                          event.User.Username,
 		"user_agent":                    event.UserAgent,
 	}
