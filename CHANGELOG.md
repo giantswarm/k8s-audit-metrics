@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2021-12-14
+
 ### Added
 - Adds new authentication.k8s.io/stale-token audit annotation, introduced by Bound Service Account tokens enhancement, as metric label.
 
@@ -56,7 +58,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First release.
 
 
-[Unreleased]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.0.7...v0.1.0
 [0.0.7]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.0.6...v0.0.7
 [0.0.6]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.0.5...v0.0.6
