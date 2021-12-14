@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Adds new authentication.k8s.io/stale-token audit annotation, introduced by Bound Service Account tokens enhancement, as metric label.
+
 ## [0.1.0] - 2021-11-02
 
 - Add `k8s_api_audit_request_duration_nanoseconds` metric to expose request duration.
