@@ -59,7 +59,6 @@ workflows:
           app_collection_repo: "aws-app-collection"
           requires:
             - push-k8s-audit-metrics-to-quay
-            - control-plane-catalog
           filters:
             branches:
               ignore: /.*/
