@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2022-09-12
+
 ### Changed
 
 - Push app to AWS app collection.
@@ -68,7 +70,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First release.
 
 
-[Unreleased]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.0.7...v0.1.0
