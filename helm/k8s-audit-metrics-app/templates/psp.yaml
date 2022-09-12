@@ -12,12 +12,9 @@ spec:
       - min: 1
         max: 65535
   runAsUser:
-    rule: MustRunAsNonRoot
+    rule: RunAsAny
   runAsGroup:
-    rule: MustRunAs
-    ranges:
-      - min: 1
-        max: 65535
+    rule: RunAsAny
   seLinux:
     rule: RunAsAny
   supplementalGroups:
