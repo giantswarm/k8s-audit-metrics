@@ -2,12 +2,9 @@ project:
   branch: "[[ .Branch ]]"
   commit: "[[ .SHA ]]"
 image:
+  registry: docker.io
   name: "giantswarm/k8s-audit-metrics"
   tag: "[[ .Version ]]"
-Installation:
-  V1:
-    Registry:
-      Domain: quay.io
 pod:
   user:
     id: 0

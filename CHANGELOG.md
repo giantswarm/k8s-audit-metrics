@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Change helm chart's value path for the image registry.
+
 ## [0.4.2] - 2022-09-12
 
 ### Fixed
