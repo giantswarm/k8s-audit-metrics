@@ -64,3 +64,17 @@ workflows:
               ignore: /.*/
             tags:
               only: /^v.*/
+
+      - architect/push-to-app-collection:
+          name: azure-app-collection
+          context: "architect"
+          app_name: "k8s-audit-metrics"
+          app_namespace: "giantswarm"
+          app_collection_repo: "azure-app-collection"
+          requires:
+            - push-k8s-audit-metrics-to-quay
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v.*/
