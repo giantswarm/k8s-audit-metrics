@@ -16,6 +16,9 @@ spec:
       labels:
         {{- include "k8s-audit-metrics.selectorLabels" . | nindent 8 }}
     spec:
+  {{- if .Values.priorityClassName }}
+      priorityClassName: {{ .Values.priorityClassName }}
+  {{- end }}
       tolerations:
       # Tolerate master taint
       - key: node-role.kubernetes.io/master

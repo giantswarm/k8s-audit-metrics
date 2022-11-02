@@ -30,3 +30,6 @@ resource:
 
 verticalPodAutoscaler:
   enabled: true
+
+# priorityClassName used by the pod.
+priorityClassName: "giantswarm-critical"
