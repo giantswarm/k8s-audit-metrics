@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Reduce cardinality for the `authentication_stale_token` label.
+
 ## [0.5.2] - 2022-11-02
 
 ### Changed
