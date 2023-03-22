@@ -1,6 +1,8 @@
 package collector
 
 import (
+	"regexp"
+
 	"github.com/giantswarm/micrologger"
 	"github.com/prometheus/client_golang/prometheus"
 	"k8s.io/apiserver/pkg/apis/audit"
@@ -29,12 +31,15 @@ type AuditLogCollector struct {
 
 	requestsCount    *prometheus.CounterVec
 	requestsDuration *prometheus.GaugeVec
+
+	staleTokenRegex *regexp.Regexp
 }
 
 func New(logger micrologger.Logger) *AuditLogCollector {
-
 	return &AuditLogCollector{
 		logger: logger,
+
+		staleTokenRegex: regexp.MustCompile(`^subject: (?P<serviceAccount>.+), seconds after warning threshold: (?P<threshold>.+)$`),
 
 		requestsCount:    newRequestCountMetric(),
 		requestsDuration: newRequestDurationMetric(),
@@ -52,19 +57,26 @@ func (c *AuditLogCollector) Collect(ch chan<- prometheus.Metric) {
 }
 
 func (c *AuditLogCollector) Process(event audit.Event) {
-	c.requestsCount.With(buildMetricLabels(event)).Inc()
+	prometheusLabels := c.buildMetricLabels(event)
+	c.requestsCount.With(prometheusLabels).Inc()
 
 	if event.Stage == audit.StageResponseComplete {
 		duration := event.StageTimestamp.Time.Sub(event.RequestReceivedTimestamp.Time)
-		c.requestsDuration.With(buildMetricLabels(event)).Set(float64(duration))
+		c.requestsDuration.With(prometheusLabels).Set(float64(duration))
 	}
 }
 
-func buildMetricLabels(event audit.Event) prometheus.Labels {
+func (c *AuditLogCollector) buildMetricLabels(event audit.Event) prometheus.Labels {
+	staleServiceAccountToken := ""
+	if event.Annotations[staleTokenAnnotationKey] != "" {
+		res := c.staleTokenRegex.FindStringSubmatch(event.Annotations[staleTokenAnnotationKey])
+		staleServiceAccountToken = res[1]
+	}
+
 	return prometheus.Labels{
 		"authorization_decision":        event.Annotations[decisionAnnotationKey],
 		"authorization_decision_reason": event.Annotations[reasonAnnotationKey],
-		"authentication_stale_token":    event.Annotations[staleTokenAnnotationKey],
+		"authentication_stale_token":    staleServiceAccountToken,
 		"user":                          event.User.Username,
 		"user_agent":                    event.UserAgent,
 	}
