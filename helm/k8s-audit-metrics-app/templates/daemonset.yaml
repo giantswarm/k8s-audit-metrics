@@ -31,7 +31,7 @@ spec:
 {{- if semverCompare ">=1.24.0" .Capabilities.KubeVersion.Version }}
         node-role.kubernetes.io/control-plane: ""
 {{- else }}
-        node-role.kubernetes.io/master: ""
+        kubernetes.io/role: master
 {{- end }}
       volumes:
       - name: {{ tpl .Values.resource.default.name  . }}-configmap
