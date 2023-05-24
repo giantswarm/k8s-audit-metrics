@@ -24,8 +24,15 @@ spec:
       - key: node-role.kubernetes.io/master
         operator: Exists
         effect: NoSchedule
+      - key: node-role.kubernetes.io/control-plane
+        operator: Exists
+        effect: NoSchedule
       nodeSelector:
+{{- if semverCompare ">=1.24.0" .Capabilities.KubeVersion.Version }}
+        node-role.kubernetes.io/control-plane: ""
+{{- else }}
         kubernetes.io/role: master
+{{- end }}
       volumes:
       - name: {{ tpl .Values.resource.default.name  . }}-configmap
         configMap:
