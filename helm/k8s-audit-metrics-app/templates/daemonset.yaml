@@ -48,6 +48,8 @@ spec:
           path: /var/log
       serviceAccountName: {{ tpl .Values.resource.default.name  . }}
       securityContext:
+        seccompProfile:
+          type: RuntimeDefault
         runAsUser: {{ .Values.pod.user.id }}
         runAsGroup: {{ .Values.pod.group.id }}
       containers:
