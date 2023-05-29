@@ -38,4 +38,4 @@ spec:
         namespaces:
         - {{ tpl .Values.resource.default.namespace  . }}
         names:
-        - {{ tpl .Values.resource.default.name  . }}
+        - {{ tpl .Values.resource.default.name  . }}*
