@@ -88,6 +88,9 @@ spec:
           limits:
             cpu: 250m
             memory: 250Mi
+        securityContext:
+          seccompProfile:
+            type: RuntimeDefault
   updateStrategy:
     rollingUpdate:
       maxUnavailable: 1
