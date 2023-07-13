@@ -9,6 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.6.0] - 2023-07-13
 
+## [0.6.0] - 2023-07-13
+
 ### Fixed
 
 - Added required values for pss policies.
@@ -115,6 +117,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 
 [Unreleased]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.6.0...v0.6.0
 [0.6.0]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.5.3...v0.6.0
 [0.5.3]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.5.2...v0.5.3
 [0.5.2]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.5.1...v0.5.2
