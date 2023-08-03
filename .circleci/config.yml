@@ -65,6 +65,17 @@ workflows:
             tags:
               only: /^v.*/
 
+      - architect/push-to-app-catalog:
+          name: "package and push chart to default app catalog"
+          context: "architect"
+          app_catalog: "default-catalog"
+          app_catalog_test: "default-test-catalog"
+          chart: "k8s-audit-metrics-app"
+          # Trigger job on git tag.
+          filters:
+            tags:
+              only: /^v.*/
+
       - architect/push-to-app-collection:
           name: aws-app-collection
           context: "architect"
