@@ -24,7 +24,7 @@ pod:
 resource:
   default:
     name: '{{ .Release.Name | replace "." "-" | trunc 47 }}'
-    namespace: "giantswarm"
+    namespace: "kube-system"
   psp:
     name: '{{ .Release.Name | replace "." "-" | trunc 47 }}-psp'
 
