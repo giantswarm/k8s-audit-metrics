@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Switched to `kube-system` namespace by default
+- Added Cilium Network Policy to scrape `/metrics` on port `8000`
+
 ## [0.6.1] - 2023-08-03
 
 ### Changed
