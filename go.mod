@@ -1,6 +1,6 @@
 module github.com/giantswarm/k8s-audit-metrics
 
-go 1.20
+go 1.21
 
 require (
 	github.com/giantswarm/exporterkit v1.0.0
