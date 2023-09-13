@@ -1,0 +1,20 @@
+apiVersion: "cilium.io/v2"
+kind: CiliumNetworkPolicy
+metadata:
+  name: {{ tpl .Values.resource.default.name  . }}
+  labels:
+    {{- include "k8s-audit-metrics.labels" . | nindent 4 }}
+specs:
+  - description: "Allow access to the k8s Audit Metrics Prometheus Metrics endpoint"
+    endpointSelector:
+      matchLabels:
+        {{- include "k8s-audit-metrics.selectorLabels" . | nindent 8 }}
+    ingress:
+      - toPorts:
+        - ports:
+          - port: "8000"
+            protocol: "TCP"
+          rules:
+            http:
+            - method: "GET"
+              path: "/metrics"
