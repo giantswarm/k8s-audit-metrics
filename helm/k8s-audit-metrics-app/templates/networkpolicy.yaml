@@ -14,7 +14,3 @@ specs:
         - ports:
           - port: "8000"
             protocol: "TCP"
-          rules:
-            http:
-            - method: "GET"
-              path: "/metrics"
