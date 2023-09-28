@@ -33,3 +33,7 @@ verticalPodAutoscaler:
 
 # priorityClassName used by the pod.
 priorityClassName: "giantswarm-critical"
+
+global:
+  podSecurityStandards:
+    enforced: false
