@@ -134,7 +134,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Convert `Deployment` to `DaemonSet` and schedule POD to all masters.
 - Mount `/var/log` to POD and tail `/var/log/apiserver/audit.log` for event processing.
 
-## [0.1.0] - 2020-12-04
+## [0.0.2] - 2020-12-04
 
 - First release.
 
