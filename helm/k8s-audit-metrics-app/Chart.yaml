@@ -4,3 +4,5 @@ appVersion: [[ .AppVersion ]]
 description: Collector that exposes metrics from k8s apiserver audit log.
 home: "https://github.com/giantswarm/k8s-audit-metrics"
 apiVersion: v1
+annotations:
+  application.giantswarm.io/team: turtles
