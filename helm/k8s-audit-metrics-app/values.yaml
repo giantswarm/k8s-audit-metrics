@@ -2,7 +2,7 @@ project:
   branch: "[[ .Branch ]]"
   commit: "[[ .SHA ]]"
 image:
-  registry: docker.io
+  registry: gsoci.azurecr.io
   name: "giantswarm/k8s-audit-metrics"
   tag: "[[ .Version ]]"
 pod:

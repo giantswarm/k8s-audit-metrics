@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Configure `gsoci.azurecr.io` as the default container image registry.
+
 ### Added
 
 - Add team label in resources.
@@ -97,10 +101,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Adds new authentication.k8s.io/stale-token audit annotation, introduced by Bound Service Account tokens enhancement, as metric label.
 
-## [0.1.0] - 2021-11-02
+## [0.1.0] - 2020-12-04
 
-- Add `k8s_api_audit_request_duration_nanoseconds` metric to expose request duration.
-- Add `authorization_decision` and `authorization_decision_reason` labels to all metrics.
+- First release.
 
 ## [0.0.7] - 2020-12-07
 
