@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Set `readOnlyRootFilesystem` to true in the container security context.
+- Add `securityContext.readOnlyRootFilesystem` helm value (default true).
 
 ## [0.9.0] - 2024-04-01
 
