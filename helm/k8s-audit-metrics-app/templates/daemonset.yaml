@@ -50,6 +50,7 @@ spec:
       securityContext:
         seccompProfile:
           type: RuntimeDefault
+        readOnlyRootFilesystem: true
         runAsUser: {{ .Values.pod.user.id }}
         runAsGroup: {{ .Values.pod.group.id }}
       containers:

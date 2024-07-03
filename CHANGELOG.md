@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Set `readOnlyRootFilesystem` to true in the container security context.
+
 ## [0.9.0] - 2024-04-01
 
 ### Added
