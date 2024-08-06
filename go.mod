@@ -2,7 +2,7 @@ module github.com/giantswarm/k8s-audit-metrics
 
 go 1.22.0
 
-toolchain go1.22.5
+toolchain go1.22.6
 
 require (
 	github.com/giantswarm/exporterkit v1.2.0
