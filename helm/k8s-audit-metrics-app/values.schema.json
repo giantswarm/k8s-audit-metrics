@@ -88,6 +88,15 @@
                 }
             }
         },
+        "securityContext": {
+            "type": "object",
+            "properties": {
+                "readOnlyRootFilesystem": {
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        },
         "verticalPodAutoscaler": {
             "type": "object",
             "properties": {
