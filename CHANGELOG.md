@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Update Kyverno `PolicyExceptions` to `v2beta1`.
+- Go: Update `go.mod` and `.nancy-ignore`. ([#248](https://github.com/giantswarm/k8s-audit-metrics/pull/248))
 
 ## [0.10.0] - 2024-07-10
 
