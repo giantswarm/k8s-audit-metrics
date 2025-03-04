@@ -6,7 +6,7 @@ require (
 	github.com/giantswarm/exporterkit v1.2.0
 	github.com/giantswarm/microerror v0.4.1
 	github.com/giantswarm/micrologger v1.1.2
-	github.com/prometheus/client_golang v1.21.0
+	github.com/prometheus/client_golang v1.21.1
 	k8s.io/apiserver v0.32.2
 )
 
