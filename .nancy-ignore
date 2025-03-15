@@ -1,2 +1,5 @@
-# pkg:golang/k8s.io/apiserver@v0.32.2
+# pkg:golang/golang.org/x/net@v0.35.0
+CVE-2025-22870
+
+# pkg:golang/k8s.io/apiserver@v0.32.3
 CVE-2020-8561
