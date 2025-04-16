@@ -28,11 +28,11 @@ func File(name string, logger micrologger.Logger) (<-chan string, error) {
 }
 
 func readFile(ctx context.Context, name string, output chan string, logger micrologger.Logger) error {
-	f, err := os.Open(name)
+	f, err := os.Open(name) //nolint:gosec
 	if err != nil {
 		return microerror.Mask(err)
 	}
-	defer f.Close()
+	defer f.Close() //nolint:errcheck
 
 	// Seek to the end of the file to not repeat earlier lines.
 	_, err = f.Seek(0, 2)
