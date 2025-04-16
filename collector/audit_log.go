@@ -61,7 +61,7 @@ func (c *AuditLogCollector) Process(event audit.Event) {
 	c.requestsCount.With(prometheusLabels).Inc()
 
 	if event.Stage == audit.StageResponseComplete {
-		duration := event.StageTimestamp.Time.Sub(event.RequestReceivedTimestamp.Time)
+		duration := event.StageTimestamp.Sub(event.RequestReceivedTimestamp.Time)
 		c.requestsDuration.With(prometheusLabels).Set(float64(duration))
 	}
 }
