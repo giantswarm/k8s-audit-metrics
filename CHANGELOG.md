@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Fix linting issues.
+- Go: Update dependencies.
 
 ## [0.10.2] - 2025-03-18
 
