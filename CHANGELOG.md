@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.4] - 2025-06-07
+
+### Changed
+
+- Go: Update dependencies.
+
 ## [0.10.3] - 2025-06-03
 
 ### Fixed
@@ -175,7 +181,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First release.
 
 
-[Unreleased]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.3...HEAD
+[Unreleased]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.4...HEAD
+[0.10.4]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.3...v0.10.4
 [0.10.3]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.2...v0.10.3
 [0.10.2]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.1...v0.10.2
 [0.10.1]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.0...v0.10.1
