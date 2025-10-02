@@ -7,9 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.7] - 2025-10-02
+
 ### Changed
 
 - Update Kyverno API to v2 for policy exceptions
+- Go: Update dependencies.
 
 ## [0.10.6] - 2025-08-26
 
@@ -197,7 +200,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First release.
 
 
-[Unreleased]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.6...HEAD
+[Unreleased]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.7...HEAD
+[0.10.7]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.6...v0.10.7
 [0.10.6]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.5...v0.10.6
 [0.10.5]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.4...v0.10.5
 [0.10.4]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.3...v0.10.4
