@@ -1,0 +1,7 @@
+checks:
+  exclude:
+    # k8s-audit-metrics needs to run as root to read audit logs
+    - run-as-non-root
+    - host-network
+    - sensitive-host-mounts
+

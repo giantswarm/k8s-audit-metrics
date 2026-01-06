@@ -19,8 +19,6 @@ Common labels
 {{- define "k8s-audit-metrics.labels" -}}
 app: {{ include "k8s-audit-metrics.name" . | quote }}
 {{ include "k8s-audit-metrics.selectorLabels" . }}
-application.giantswarm.io/branch: {{ .Values.project.branch | quote }}
-application.giantswarm.io/commit: {{ .Values.project.commit | quote }}
 app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 application.giantswarm.io/team: {{ index .Chart.Annotations "application.giantswarm.io/team" | quote }}
@@ -33,4 +31,15 @@ Selector labels
 {{- define "k8s-audit-metrics.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "k8s-audit-metrics.name" . | quote }}
 app.kubernetes.io/instance: {{ .Release.Name | quote }}
+{{- end -}}
+
+{{/*
+Image tag helper
+*/}}
+{{- define "image.tag" -}}
+{{- if .Values.image.tag -}}
+{{- .Values.image.tag -}}
+{{- else -}}
+{{- .Chart.AppVersion -}}
+{{- end -}}
 {{- end -}}
