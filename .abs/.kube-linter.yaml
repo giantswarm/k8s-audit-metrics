@@ -4,4 +4,6 @@ checks:
     - run-as-non-root
     - host-network
     - sensitive-host-mounts
+    # Needs filesystem write access
+    - no-read-only-root-fs
 
