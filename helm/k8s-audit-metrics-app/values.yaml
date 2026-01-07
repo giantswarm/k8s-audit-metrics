@@ -1,10 +1,7 @@
-project:
-  branch: "[[ .Branch ]]"
-  commit: "[[ .SHA ]]"
 image:
   registry: gsoci.azurecr.io
   name: "giantswarm/k8s-audit-metrics"
-  tag: "[[ .Version ]]"
+  tag: ""
 pod:
   user:
     id: 0
