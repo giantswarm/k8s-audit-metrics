@@ -1,8 +1,10 @@
+apiVersion: v2
 name: k8s-audit-metrics
-version: [[ .Version ]]
-appVersion: [[ .AppVersion ]]
+version: 0.10.11-dev
+appVersion: 0.10.11-dev
 description: Collector that exposes metrics from k8s apiserver audit log.
 home: "https://github.com/giantswarm/k8s-audit-metrics"
-apiVersion: v1
+icon: https://s.giantswarm.io/app-icons/prometheus/1/light.svg
 annotations:
-  application.giantswarm.io/team: turtles
+  application.giantswarm.io/team: tenet
+  io.giantswarm.application.team: tenet
