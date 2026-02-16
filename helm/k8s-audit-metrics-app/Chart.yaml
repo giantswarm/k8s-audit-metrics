@@ -1,7 +1,7 @@
 apiVersion: v2
 name: k8s-audit-metrics
-version: 0.10.12
-appVersion: 0.10.12
+version: 0.10.13
+appVersion: 0.10.13
 description: Collector that exposes metrics from k8s apiserver audit log.
 home: "https://github.com/giantswarm/k8s-audit-metrics"
 icon: https://s.giantswarm.io/app-icons/prometheus/1/light.svg
