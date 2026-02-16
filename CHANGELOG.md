@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.13] - 2026-02-16
+
 ### Removed
 
 - Removed `PodSecurityPolicy`.
@@ -237,7 +239,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First release.
 
 
-[Unreleased]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.12...HEAD
+[Unreleased]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.13...HEAD
+[0.10.13]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.12...v0.10.13
 [0.10.12]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.11...v0.10.12
 [0.10.11]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.10...v0.10.11
 [0.10.10]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.9...v0.10.10
