@@ -22,8 +22,6 @@ resource:
   default:
     name: '{{ .Release.Name | replace "." "-" | trunc 47 }}'
     namespace: "kube-system"
-  psp:
-    name: '{{ .Release.Name | replace "." "-" | trunc 47 }}-psp'
 
 securityContext:
   readOnlyRootFilesystem: true
@@ -33,7 +31,3 @@ verticalPodAutoscaler:
 
 # priorityClassName used by the pod.
 priorityClassName: "giantswarm-critical"
-
-global:
-  podSecurityStandards:
-    enforced: false
