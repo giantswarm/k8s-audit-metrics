@@ -1,5 +1,5 @@
 orbs:
-  architect: giantswarm/architect@8.1.0
+  architect: giantswarm/architect@8.2.2
 
 version: 2.1
 workflows:
@@ -7,6 +7,7 @@ workflows:
     jobs:
       # build operator
       - architect/go-build:
+          context: architect
           name: go-build
           binary: k8s-audit-metrics
           resource_class: large
