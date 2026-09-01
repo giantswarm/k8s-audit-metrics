@@ -62,6 +62,13 @@ replace go.opentelemetry.io/otel v1.41.0 => go.opentelemetry.io/otel v1.44.0
 
 replace go.opentelemetry.io/otel/sdk v1.40.0 => go.opentelemetry.io/otel/sdk v1.44.0
 
-replace golang.org/x/crypto v0.47.0 => golang.org/x/crypto v0.53.0
+replace (
+	golang.org/x/crypto v0.47.0 => golang.org/x/crypto v0.53.0
+	golang.org/x/crypto v0.54.0 => golang.org/x/crypto v0.55.0
+)
 
 replace golang.org/x/net v0.49.0 => golang.org/x/net v0.56.0
+
+replace github.com/rabbitmq/amqp091-go v1.2.0 => github.com/rabbitmq/amqp091-go v1.14.0
+
+replace golang.org/x/mod v0.37.0 => golang.org/x/mod v0.40.0
