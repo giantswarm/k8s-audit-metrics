@@ -72,3 +72,5 @@ replace golang.org/x/net v0.49.0 => golang.org/x/net v0.56.0
 replace github.com/rabbitmq/amqp091-go v1.2.0 => github.com/rabbitmq/amqp091-go v1.14.0
 
 replace golang.org/x/mod v0.37.0 => golang.org/x/mod v0.40.0
+
+replace google.golang.org/grpc v1.79.3 => google.golang.org/grpc v1.83.2
