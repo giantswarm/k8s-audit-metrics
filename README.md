@@ -64,10 +64,10 @@ go build
 
 ## Contributing & Reporting Bugs
 
-See [CONTRIBUTING.md](/giantswarm/k8s-audit-metrics/blob/master/CONTRIBUTING.md) for details on submitting patches, the contribution workflow as well as reporting bugs.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details on submitting patches, the contribution workflow as well as reporting bugs.
 
 For security issues, please see [the security policy](SECURITY.md).
 
 ## License
 
-PROJECT is under the Apache 2.0 license. See the [LICENSE](/giantswarm/k8s-audit-metrics/blob/master/LICENSE) file for details.
+PROJECT is under the Apache 2.0 license. See the [LICENSE](LICENSE) file for details.
