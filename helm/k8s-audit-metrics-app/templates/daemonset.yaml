@@ -50,7 +50,6 @@ spec:
       securityContext:
         seccompProfile:
           type: RuntimeDefault
-        readOnlyRootFilesystem: {{ .Values.securityContext.readOnlyRootFilesystem }}
         runAsUser: {{ .Values.pod.user.id }}
         runAsGroup: {{ .Values.pod.group.id }}
       containers:
@@ -90,6 +89,7 @@ spec:
             cpu: 250m
             memory: 250Mi
         securityContext:
+          readOnlyRootFilesystem: {{ .Values.securityContext.readOnlyRootFilesystem }}
           seccompProfile:
             type: RuntimeDefault
   updateStrategy:

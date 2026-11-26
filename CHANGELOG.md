@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Set `readOnlyRootFilesystem` on the container instead of the pod, where it is not a valid field. The root filesystem is now read-only, as `securityContext.readOnlyRootFilesystem: true` intended.
+
 ## [0.10.14] - 2026-10-29
 
 ### Changed
