@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add the `kyvernoPolicyExceptions.enabled` value (default `true`) to turn off both PolicyExceptions.
 - Label the `kyverno.io/v2` PolicyException with `policy.giantswarm.io/migrated-to-cel: "true"`, to mark it as migrated to CEL.
 
+### Changed
+
+- Remove `require-ro-rootfs` from the CEL PolicyException.
+
 ### Fixed
 
 - Set `readOnlyRootFilesystem` on the container instead of the pod, where it is not a valid field. The root filesystem is now read-only, as `securityContext.readOnlyRootFilesystem: true` intended.

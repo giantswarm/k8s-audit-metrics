@@ -24,11 +24,6 @@ spec:
   # because the k8s-audit-metrics DaemonSet fails it.
   - name: require-non-root-groups
     kind: ValidatingPolicy
-  # require-ro-rootfs is a supplemental policy and usually not enabled. It is
-  # excepted because the k8s-audit-metrics DaemonSet fails it when the policy is
-  # enforced.
-  - name: require-ro-rootfs
-    kind: ValidatingPolicy
   # restrict-sa-automount-sa-token is a supplemental policy and usually not
   # enabled. It is excepted because the k8s-audit-metrics ServiceAccount fails it
   # when the policy is enforced.
