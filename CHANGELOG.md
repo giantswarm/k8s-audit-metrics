@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.10.15] - 2026-11-26
+
 ### Added
 
 - Add a `policies.kyverno.io/v1` PolicyException next to the `kyverno.io/v2` one, so the exception also applies to the CEL (ValidatingPolicy) versions of the policies. The CEL one is always rendered; set `kyvernoPolicyExceptions.legacy.enabled: false` to stop rendering the legacy one.
@@ -265,7 +267,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - First release.
 
 
-[Unreleased]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.14...HEAD
+[Unreleased]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.15...HEAD
+[0.10.15]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.14...v0.10.15
 [0.10.14]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.13...v0.10.14
 [0.10.13]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.12...v0.10.13
 [0.10.12]: https://github.com/giantswarm/k8s-audit-metrics/compare/v0.10.11...v0.10.12
