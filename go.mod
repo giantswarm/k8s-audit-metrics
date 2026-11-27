@@ -7,7 +7,7 @@ require (
 	github.com/giantswarm/microerror v0.4.1
 	github.com/giantswarm/micrologger v1.1.2
 	github.com/prometheus/client_golang v1.25.0
-	k8s.io/apiserver v0.37.2
+	k8s.io/apiserver v0.37.3
 )
 
 require (
@@ -47,8 +47,8 @@ require (
 	golang.org/x/text v0.43.0 // indirect
 	google.golang.org/protobuf v1.36.12 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
-	k8s.io/api v0.37.2 // indirect
-	k8s.io/apimachinery v0.37.2 // indirect
+	k8s.io/api v0.37.3 // indirect
+	k8s.io/apimachinery v0.37.3 // indirect
 	k8s.io/klog/v2 v2.140.0 // indirect
 	k8s.io/kube-openapi v0.0.0-20261014044854-ca3452a79603 // indirect
 	k8s.io/utils v0.0.0-20261023123148-ca04ba58ecab // indirect
